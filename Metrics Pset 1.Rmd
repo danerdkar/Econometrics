@@ -1,0 +1,35 @@
+---
+title: "Metrics Pset 1 Problem 8"
+author: "Russell Struve"
+date: "4/8/2022"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+```{r setup}
+n <- 10000
+mu <- 0 
+sigma <- 1
+x <- rnorm(n, mu, sigma)
+df <- data.frame(x)
+ggplot(df, aes(x=x)) + geom_histogram(bins = 30, color="black", fill="light pink") + ggtitle("Random draws from normal distribution of n=10000")
+```
+
+```{r setup}
+n <- 10000
+min_y <- -1
+max_y <- 1
+y <- runif (n, min_y, max_y)
+
+df1 <- data.frame(y)
+ggplot(df1, aes(y=y)) + geom_histogram(bins = 30, color="black",fill="light blue") + ggtitle("Random draws from uniform distribution of n=10000")
+```
+
+
